@@ -1,0 +1,62 @@
+import type { TOC } from '@ember/component/template-only';
+import { pageTitle } from 'ember-page-title';
+
+interface IndexSignature {
+  Element: HTMLDivElement;
+}
+
+const IndexTemplate: TOC<IndexSignature> = <template>
+  {{pageTitle "Home"}}
+  <p>
+    Our goal is to help make Ember easily testable for use with assistive
+    technologies. This site intends to demonstrate the default rendering of
+    common UI elements both in native Ember elements and most popular addons as
+    ranked on
+    <a href="http://emberobserver.com" rel="external">Ember Observer</a>, a
+    website that tracks the top Ember addons).
+  </p>
+
+  <h3 class="section-title">How to use this site</h3>
+  <p>Turn on the assistive technology of your choice, and see for yourself how
+    the functionality works in a 100% native way. None of the examples on this
+    site have been altered to include additional properties that would make them
+    accessible for persons with disabilities.</p>
+
+  <h3 class="section-title">How to contribute</h3>
+  <h4>Developers</h4>
+  <p>
+    If you have examples that you would like to contribute to this app, we would
+    love to have your participation! Please submit a pull request through the
+    Github repo.
+  </p>
+
+  <p class="container">
+    <a href="https://github.com/ember-a11y/a11y-demo-app" class="github-link">
+      Project Github page
+    </a>
+  </p>
+
+  <h4>Assistive Technologies Providers</h4>
+  <p>
+    Are you an Assistive Technologies(AT) provider? We would love to have a
+    conversation with you about how to make each of these experiences a delight
+    for those who would use them.
+  </p>
+  <h4>Technology Evangelists</h4>
+  <p>We would be thrilled to work with you to spread the word about the
+    ember-a11y project.
+  </p>
+
+  <h3 class="section-title">Where you can find us</h3>
+  <p>
+    You can find us in
+    <a
+      href="https://discordapp.com/channels/480462759797063690/480523441082990612"
+    >#topic-a11y</a>
+    in the
+    <a href="https://discordapp.com/channels/480462759797063690">Ember.js
+      Discord community</a>.
+  </p>
+</template>;
+
+export default IndexTemplate;

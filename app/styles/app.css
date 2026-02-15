@@ -1,0 +1,364 @@
+:root {
+  --light-green: #e6f6f6;
+  --light-green-hover: #d3e9e9;
+  --medium-green: #6dae9a;
+  --medium-green-hover: #579e88;
+  --light-grey-hover: #f7f7f7;
+  --black: #222;
+  --medium-gray: #4d4d4d;
+  --grey: #666;
+  --light-gray: #ccc;
+  --text-blue: #3b434e;
+  --text-blue-dark: #1f252d;
+  --regular-padding: 1em;
+  --narrow-padding: 0.5em;
+
+  /* Breakpoints (for reference; used in media queries as literals) */
+
+  /* --small-screen: 600px; */
+
+  /* --medium-screen: 768px; */
+
+  /* --large-screen: 992px; */
+
+  /* --exlg-screen: 1120px; */
+}
+
+body {
+  margin: 0;
+  background-color: #edf4ec;
+  color: var(--text-blue);
+  font-family:
+    system-ui,
+    -apple-system,
+    "Segoe UI",
+    Roboto,
+    "Helvetica Neue",
+    Arial,
+    sans-serif;
+}
+
+header {
+  width: 100%;
+}
+
+a {
+  border-bottom: 1px dotted var(--light-gray);
+}
+
+a:focus {
+  outline: revert;
+}
+
+h2 small {
+  font-size: 0.5em;
+}
+
+h4 {
+  margin-bottom: 0;
+}
+
+.brand-logo {
+  display: block;
+  height: 150px;
+  margin: 0 auto;
+  width: 150px;
+
+  & img {
+    width: 100%;
+  }
+}
+
+@media (width >= 992px) {
+  .brand-logo {
+    display: block;
+    float: left;
+    height: 150px;
+    margin: 0;
+    width: 150px;
+  }
+}
+
+.container {
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.grid-container {
+  display: grid;
+  grid-template-columns: 2fr 8fr;
+}
+
+.title {
+  display: block;
+  clear: both;
+  min-height: 4.5rem;
+  margin: 0 auto;
+
+  @media screen and (width >= 768px) {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+  }
+
+  & .brand-logo {
+    display: block;
+    height: 100px;
+    margin: 0 auto;
+    width: 100px;
+
+    @media screen and (width >= 768px) {
+      height: 100px;
+      margin: 0;
+      width: 100px;
+    }
+
+    & img {
+      width: 100%;
+    }
+  }
+
+  & h1 {
+    display: block;
+    letter-spacing: 1px;
+    margin: 0 auto;
+    text-transform: uppercase;
+    text-align: center;
+    color: var(--text-blue);
+
+    @media screen and (width >= 768px) {
+      margin: 0 0.5em;
+    }
+  }
+}
+
+.navigation {
+  margin: 0 auto;
+  padding-top: var(--narrow-padding);
+
+  & ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  & li {
+    display: inline-block;
+
+    @media screen and (width >= 768px) {
+      display: block;
+      border-bottom: 1px solid white;
+      font-size: 0.75em;
+      letter-spacing: 2px;
+      line-height: 3;
+      text-transform: uppercase;
+      font-weight: bold;
+    }
+
+    & a {
+      display: block;
+      padding: var(--narrow-padding);
+      background-color: transparent;
+      color: var(--text-blue);
+      border-bottom-color: transparent;
+
+      &:hover {
+        color: var(--text-blue-dark);
+        background-color: var(--light-green);
+        border-bottom-color: transparent;
+      }
+
+      &.active {
+        font-weight: bold;
+      }
+    }
+
+    & .nav-heading {
+      margin-top: 1em;
+      color: var(--grey);
+      display: none;
+
+      @media screen and (width >= 768px) {
+        display: block;
+      }
+    }
+  }
+}
+
+.content {
+  padding: var(--regular-padding);
+  padding-top: 2.5em;
+
+  & p {
+    margin-bottom: var(--regular-padding);
+  }
+
+  & h2 {
+    margin-bottom: var(--narrow-padding);
+  }
+}
+
+.example {
+  max-width: 1200px;
+  margin: 2em auto;
+
+  & h4 {
+    font-size: 1.1em;
+  }
+
+  & h5 {
+    font-size: 1em;
+  }
+
+  & .source {
+    margin-right: 0;
+    margin-left: 0;
+    background-color: #fff;
+    border: 1px solid var(--text-blue);
+    border-radius: 4px;
+    position: relative;
+    padding: 43px 15px 15px;
+
+    &::after {
+      position: absolute;
+      top: 15px;
+      left: 15px;
+      font-size: 12px;
+      font-weight: 700;
+      color: var(--text-blue);
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      content: "Example";
+    }
+  }
+
+  & .output {
+    margin-bottom: 1em;
+  }
+}
+
+.section-title {
+  margin: 1.6em 0 0.5em;
+  border-bottom: 1px solid var(--light-gray);
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: var(--text-blue);
+}
+
+footer {
+  border-top: 1px solid var(--light-gray);
+  padding: 1rem;
+  text-align: center;
+}
+
+article.aria-roles {
+  display: flex;
+  flex-flow: row wrap;
+
+  & h4,
+  & h5 {
+    flex: 1;
+    align-items: stretch;
+    min-width: 100%;
+    margin-bottom: 0.5em;
+  }
+}
+
+.demo-div {
+  flex: 1;
+  min-width: 300px;
+  min-height: 100px;
+  padding: 0.25em;
+  border: 1px solid var(--light-gray);
+  margin: 0 0 1em 0.5em;
+}
+
+.demo-box {
+  clear: both;
+  display: block;
+  max-width: 300px;
+  min-height: 300px;
+  text-align: center;
+}
+
+.vr {
+  margin: 0 0.5em;
+}
+
+pre {
+  overflow: auto;
+  display: block;
+  padding: 0.5em;
+  margin: 0 0 10px;
+  font-size: 0.9em;
+  line-height: 1.2;
+  word-break: break-all;
+  overflow-wrap: break-word;
+  color: #333;
+  background-color: #f5f5f5;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+code,
+kbd,
+samp {
+  font-family: Menlo, Monaco, Consolas, "Courier New", monospace;
+  font-size: 1em;
+}
+
+code {
+  padding: 2px 4px;
+  font-size: 90%;
+  color: #c7254e;
+  background-color: #f9f2f4;
+  border-radius: 4px;
+}
+
+kbd {
+  padding: 2px 4px;
+  font-size: 90%;
+  color: #fff;
+  background-color: #333;
+  border-radius: 3px;
+  box-shadow: inset 0 -1px 0 rgb(0 0 0 / 25%);
+
+  & kbd {
+    padding: 0;
+    font-size: 100%;
+    font-weight: bold;
+    box-shadow: none;
+  }
+}
+
+pre code {
+  padding: 0;
+  font-size: inherit;
+  color: inherit;
+  white-space: pre-wrap;
+  background-color: transparent;
+  border-radius: 0;
+}
+
+/* Index route styles */
+.github-link {
+  background-color: #c6e1dc;
+  border-radius: 4px;
+  box-shadow: 1px 1px 1px 0 rgb(0 0 0 / 10%);
+  color: #3b434e;
+  display: block;
+  clear: both;
+  margin: 1em auto;
+  max-width: 300px;
+  font-weight: 600;
+  padding: var(--regular-padding);
+  text-align: center;
+
+  &:hover {
+    background-color: #a4c1bf;
+    box-shadow: 1px 1px 1px 0 rgb(0 0 0 / 20%);
+    color: #3b434e;
+  }
+}
